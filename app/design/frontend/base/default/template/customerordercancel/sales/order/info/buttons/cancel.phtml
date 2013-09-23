@@ -1,0 +1,14 @@
+<?php
+/**
+ * @category    Herve
+ * @package     Herve_CustomerCancelOrder
+ * @copyright   Copyright (c) 2013 Hervé Guétin (http://www.herveguetin.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php $_order = $this->getOrder() ?>
+
+<?php if(Mage::helper('customerordercancel')->canCancel($_order)): ?>
+    <span class="separator">|</span>
+    <a href="<?php echo $this->getUrl('customerordercancel/order/cancel', array('order_id' => $_order->getId(), '_secure'=>true)) ?>" class="link-reorder"><?php echo $this->__('Cancel Order') ?></a>
+<?php endif ?>

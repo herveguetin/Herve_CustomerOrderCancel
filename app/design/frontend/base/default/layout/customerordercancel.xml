@@ -11,7 +11,7 @@
 
     <sales_order_view>
         <reference name="sales.order.info.buttons">
-            <block type="sales/order_info_buttons" name="customer.order.cancel.button" as="customer_order_cancel_button" template="customercancelorder/sales/order/info/buttons/cancel.phtml"></block>
+            <block type="sales/order_info_buttons" name="customer.order.cancel.button" as="customer_order_cancel_button" template="customerordercancel/sales/order/info/buttons/cancel.phtml"></block>
         </reference>
     </sales_order_view>
 
