@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Herve
+ * @package     Herve_CustomerOrderCancel
+ * @copyright   Copyright (c) 2013 Hervé Guétin (http://www.herveguetin.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+
+    <sales_order_view>
+        <reference name="sales.order.info.buttons">
+            <block type="sales/order_info_buttons" name="customer.order.cancel.button" as="customer_order_cancel_button" template="customercancelorder/sales/order/info/buttons/cancel.phtml"></block>
+        </reference>
+    </sales_order_view>
+
+</layout>
