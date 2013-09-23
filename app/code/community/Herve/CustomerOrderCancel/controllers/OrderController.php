@@ -26,6 +26,12 @@ class Herve_CustomerOrderCancel_OrderController extends Mage_Core_Controller_Fro
         $session = Mage::getSingleton('catalog/session');
 
         try {
+
+            // Make sure that the order can still be canceled since customer clicked on "Cancel Order"
+            if(!Mage::helper('customerordercancel')->canCancel($order)) {
+                throw new Exception('Order cannot be canceled anymore.');
+            }
+
             // Cancel and save the order
             $order->cancel();
             $order->save();
