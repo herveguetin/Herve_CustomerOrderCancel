@@ -37,13 +37,13 @@ class Herve_CustomerOrderCancel_Helper_Data extends Mage_Core_Helper_Abstract
             return false;
         }
 
-        // Calculate the number of days since the order's datetime
+        // Calculate the number of hours since the order's datetime
         $dateModel = Mage::getModel('core/date');
-        $createdAt = $order->getCreatedAtStoreDate();
-        $deltaDays = ($dateModel->gmtTimestamp() - $dateModel->gmtTimestamp($createdAt)) / 86400;
+        $createdAt = $order->getCreatedAt();
+        $deltaHours = ($dateModel->Timestamp() - $dateModel->Timestamp($createdAt)) / 3600;
 
-        // If the numebr of days since order's datetime is larger than the cancelation leadtime in system config: return false
-        if(Mage::getStoreConfig('sales/cancel/leadtime') !== '' && $deltaDays > Mage::getStoreConfig('sales/cancel/leadtime')) {
+        // If the numebr of hours since order's datetime is larger than the cancelation leadtime in system config: return false
+        if(Mage::getStoreConfig('sales/cancel/leadtime') !== '' && $deltaHours > Mage::getStoreConfig('sales/cancel/leadtime')) {
             return false;
         }
 
